@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from "./auth/auth.service";
-import {Router} from "@angular/router";
-import {Observable} from "rxjs/internal/Observable";
-import {Collegue} from "./auth/auth.domains";
+import {AuthService} from './auth/auth.service';
+import {Router} from '@angular/router';
+import {Observable} from 'rxjs/internal/Observable';
+import {Collegue} from './auth/auth.domains';
 
 /**
  * Composant principal de l'application.
@@ -11,7 +11,7 @@ import {Collegue} from "./auth/auth.domains";
   selector: 'app-root',
   template: `
     <div class="jumbotron">
-      <h2 class="h1 h1-responsive">Super Application</h2>
+      <h2 class="h1 h1-responsive">SID Finance</h2>
       <div *ngIf="!(collegueConnecte | async).estAnonyme()">
         <span>{{(collegueConnecte | async).email}}</span>
         <span>({{(collegueConnecte | async).roles}})</span>
@@ -24,9 +24,9 @@ import {Collegue} from "./auth/auth.domains";
 })
 export class AppComponent implements OnInit {
 
-  collegueConnecte:Observable<Collegue>;
+  collegueConnecte: Observable<Collegue>;
 
-  constructor(private _authSrv:AuthService, private _router:Router) {
+  constructor(private _authSrv: AuthService, private _router: Router) {
 
   }
 
