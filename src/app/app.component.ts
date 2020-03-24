@@ -9,7 +9,8 @@ import {Collegue} from './auth/auth.domains';
  */
 @Component({
   selector: 'app-root',
-  template: `
+  templateUrl:'./app.component.html',/**!!**/
+  /* `
     <div class="jumbotron">
       <h2 class="h1 h1-responsive">SID Finance</h2>
       <div *ngIf="!(collegueConnecte | async).estAnonyme()">
@@ -19,8 +20,8 @@ import {Collegue} from './auth/auth.domains';
       </div>
     </div>
     <router-outlet></router-outlet>
-  `,
-  styles: []
+  `,*/
+  styleUrls: ['styles.scss'] /**!! **/
 })
 export class AppComponent implements OnInit {
 
