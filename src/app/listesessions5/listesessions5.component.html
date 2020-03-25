@@ -1,6 +1,5 @@
-
-
-  <p class="titre02">Liste des sessions</p>
+<!-- Version en dur
+<p class="titre02">Liste des sessions</p>
 
   <table class="table01">
     <colgroup>
@@ -89,5 +88,119 @@
       <td><br /></td>
     </tr>
   </table>
+-->
+<div class="row">
+  <div class="col-6">
+    <h1>Liste des sessions</h1>
+  </div>
+</div>
 
+<div class="row">
+  <div class="col-4">
+    <button class="btn btn-primary"
+      (click)="rechercherSession( saisieEtablissement.value, saisieFormation.value, saisieCertification.value)">Filtrer par : </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-2">
+    <label for="etablissement">Etablissement </label>
+  </div>
+  <div class="col-4">
+    <input type="text" name="etablissement" id="etablissement" value="" #saisieEtablissement><br>
+  </div>
+
+  <div class="col-2">
+    <label for="salle">Salle </label>
+  </div>
+  <div class="col-4">
+    <input type="text" name="salle" id="salle" value="" #saisieSalle><br>
+  </div>  
+
+</div>
+
+<div class="row">
+  <div class="col-2">
+    <label for="formation">Formation</label>
+  </div>
+  <div class="col-4">
+    <input type="text" name="formation" id="formation" value="" #saisieformation><br>
+  </div>
+
+  <div class="col-2">
+    <label for="Entreprise">Entreprise </label>
+  </div>
+  <div class="col-4">
+    <input type="text" name="entreprise" id="entreprise" value="" #saisieEntreprise><br>
+  </div>  
+
+</div>
+
+
+<div class="row">
+  <div class="col-2">
+    <label for="dateDebut">Date de début  </label>
+  </div>
+  <div class="col-4">
+    <input type="date" name="dateDebut" id="dateDebut" value="" #saisiedateDebut><br>
+  </div>  
+
+  <div class="col-2">
+    <label for="certification">Certification </label>
+  </div>
+
+  <div class="col-4">
+    <input type="text" name="certification" id="certification" value="" #saisieCertification><br>
+  </div>
+
+ </div>
+
+<div class="row">
+  <div class="col-2">
+    <label for="dateFin">Date de fin</label>
+  </div>
+  <div class="col-4">
+    <input type="date" name="dateFin" id="dateFin" value="" #saisiedateFin><br>
+  </div> 
+</div> 
+
+
+<div class="row" >
+
+  <div class="col-6" *ngFor="let Session of listeSessions | async">
+    <div class="row border">
+      <p style="padding-left: 10px;padding-top: 10px;"><strong>{{ Session.etablissement }} {{ Session.certification }}</strong></p>
+
+    </div>
+
+    <div class="row border" >
+
+      <div class="col-3" >
+        <img [src]="Session.urlPhoto" alt="thumbnail" style="width: 100px;padding-top: 50px;">
+        <!-- <img src="https://www.w3schools.com/bootstrap/img_avatar2.png" alt="thumbnail" style="width: 100px;padding-top: 50px;"> -->
+          
+      </div>
+
+      <div class="col-2" >
+        <p style="color:blue"><strong>Etablissement</strong></p>
+        <p style="color:blue"><strong>Certification</strong></p>
+        <p style="color:blue"><strong>Permis</strong></p>
+        <p style="color:blue"><strong>Email</strong></p>
+        <p style="color:blue"><strong>Téléphone</strong></p>
+       </div>
+
+      <div class="col-2">
+        <p><strong>{{ Session.etablissement}}</strong></p>
+        <p><strong>{{ Session.certification}}</strong></p>
+        <p><strong>{{ Session.numeroPermis}}</strong></p>
+        <p><strong>{{ Session.email}}</strong></p>
+        <p><strong>{{ Session.numeroTel}}</strong></p>
+      </div>
+      
+    </div>
+
+  </div>
+
+
+</div>
 

@@ -7,9 +7,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { TechComponent } from './tech/tech.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AuthComponent } from './auth/auth.component';
-import {FormsModule} from '@angular/forms';
-import {StatutConnecteService} from './auth/statut-connecte.service';
-import {AuthInterceptorService} from './auth/auth-interceptor.service';
+import { FormsModule} from '@angular/forms';
+import { StatutConnecteService} from './auth/statut-connecte.service';
+import { AuthInterceptorService} from './auth/auth-interceptor.service';
 import { Sessionformation1Component } from './sessionformation1/sessionformation1.component';
 import { Certifications2Component } from './certifications2/certifications2.component';
 import { Finansessionformation3Component } from './finansessionformation3/finansessionformation3.component';
@@ -25,6 +25,7 @@ import { MenuComponent } from './menu/menu.component';
 const routes: Routes = [
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService]}, // /tech accessible uniquement si connecté
   { path: 'auth', component: AuthComponent},
+  { path: 'sessions', component: Listesessions5Component},
   { path: '', redirectTo: '/tech', pathMatch: 'full'}
 ];
 
