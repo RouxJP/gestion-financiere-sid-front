@@ -35,9 +35,11 @@ export class DataService {
                                   + '&dateDebutSession=' + dateDebutSession  + '&dateFinSession=' + dateFinSession;
     console.log( urlGet);
     Session = this.httpClient.get<string[]>(urlGet);
-    Session.forEach(element => {
+    /**
+     * Session.forEach(element => {
       console.log(element);
     });
+    */
 
     return Session;
 

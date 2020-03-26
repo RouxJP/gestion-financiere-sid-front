@@ -98,7 +98,9 @@
 <div class="row">
   <div class="col-4">
     <button class="btn btn-primary"
-      (click)="rechercherSession( saisieEtablissement.value, saisieFormation.value, saisieCertification.value)">Filtrer par : </button>
+      (click)="rechercherSession( saisieEtablissement.value,    saisieFormation.value, saisieSalle.value,
+                                  saisieCertification.value,    saisieEntreprise.value, 
+                                  saisieDateFinSession.value,   saisieDateFinSession.value)">Filtrer par : </button>
   </div>
 </div>
 
@@ -124,7 +126,7 @@
     <label for="formation">Formation</label>
   </div>
   <div class="col-4">
-    <input type="text" name="formation" id="formation" value="" #saisieformation><br>
+    <input type="text" name="formation" id="formation" value="" #saisieFormation><br>
   </div>
 
   <div class="col-2">
@@ -142,7 +144,7 @@
     <label for="dateDebut">Date de début  </label>
   </div>
   <div class="col-4">
-    <input type="date" name="dateDebut" id="dateDebut" value="" #saisiedateDebut><br>
+    <input type="date" name="dateDebut" id="dateDebut" value="" #saisiedateDebutSession><br>
   </div>  
 
   <div class="col-2">
@@ -160,7 +162,7 @@
     <label for="dateFin">Date de fin</label>
   </div>
   <div class="col-4">
-    <input type="date" name="dateFin" id="dateFin" value="" #saisiedateFin><br>
+    <input type="date" name="dateFin" id="dateFin" value="" #saisieDateFinSession><br>
   </div> 
 </div> 
 
@@ -169,36 +171,11 @@
 
   <div class="col-6" *ngFor="let Session of listeSessions | async">
     <div class="row border">
-      <p style="padding-left: 10px;padding-top: 10px;"><strong>{{ Session.etablissement }} {{ Session.certification }}</strong></p>
+      <p style="padding-left: 10px;padding-top: 10px;"><strong>{{ Session.nomSession }} {{ Session.nomEtablissement }}</strong></p>
 
     </div>
 
-    <div class="row border" >
-
-      <div class="col-3" >
-        <img [src]="Session.urlPhoto" alt="thumbnail" style="width: 100px;padding-top: 50px;">
-        <!-- <img src="https://www.w3schools.com/bootstrap/img_avatar2.png" alt="thumbnail" style="width: 100px;padding-top: 50px;"> -->
-          
-      </div>
-
-      <div class="col-2" >
-        <p style="color:blue"><strong>Etablissement</strong></p>
-        <p style="color:blue"><strong>Certification</strong></p>
-        <p style="color:blue"><strong>Permis</strong></p>
-        <p style="color:blue"><strong>Email</strong></p>
-        <p style="color:blue"><strong>Téléphone</strong></p>
-       </div>
-
-      <div class="col-2">
-        <p><strong>{{ Session.etablissement}}</strong></p>
-        <p><strong>{{ Session.certification}}</strong></p>
-        <p><strong>{{ Session.numeroPermis}}</strong></p>
-        <p><strong>{{ Session.email}}</strong></p>
-        <p><strong>{{ Session.numeroTel}}</strong></p>
-      </div>
-      
-    </div>
-
+  
   </div>
 
 
