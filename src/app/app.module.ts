@@ -10,15 +10,18 @@ import { AuthComponent } from './auth/auth.component';
 import { FormsModule} from '@angular/forms';
 import { StatutConnecteService} from './auth/statut-connecte.service';
 import { AuthInterceptorService} from './auth/auth-interceptor.service';
+
 import { Sessionformation1Component } from './sessionformation1/sessionformation1.component';
 import { Certifications2Component } from './certifications2/certifications2.component';
 import { Finansessionformation3Component } from './finansessionformation3/finansessionformation3.component';
 import { Finansessionformation4Component } from './finansessionformation4/finansessionformation4.component';
+
 import { Listesessions5Component } from './listesessions5/listesessions5.component';
 import { Synthesesessions6Component } from './synthesesessions6/synthesesessions6.component';
 import { Detailrevenusession7Component } from './detailrevenusession7/detailrevenusession7.component';
 import { Detailcoutsformateur8Component } from './detailcoutsformateur8/detailcoutsformateur8.component';
 import { Detailautrecoutssession9Component } from './detailautrecoutssession9/detailautrecoutssession9.component';
+
 import { MenuComponent } from './menu/menu.component';
 
 
@@ -26,6 +29,7 @@ const routes: Routes = [
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService]}, // /tech accessible uniquement si connecté
   { path: 'auth', component: AuthComponent},
   { path: 'sessions', component: Listesessions5Component},
+  { path: 'menu', component: MenuComponent},
   { path: '', redirectTo: '/tech', pathMatch: 'full'}
 ];
 

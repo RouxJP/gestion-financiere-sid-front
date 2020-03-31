@@ -1,4 +1,4 @@
-<!-- Version en dur
+<!--Version en dur 
 <p class="titre02">Liste des sessions</p>
 
   <table class="table01">
@@ -88,19 +88,27 @@
       <td><br /></td>
     </tr>
   </table>
--->
-<div class="row">
+
+  <div class="col-6" *ngFor="let Session of listeSessions | async">
+    <div class="row border">
+      <p style="padding-left: 10px;padding-top: 10px;"><strong>{{ Session.nomSession }} {{ Session.nomEtablissement }}</strong></p>
+
+   </div>
+
+  -->
+
+<!-- <div class="row">
   <div class="col-6">
     <h1>Liste des sessions</h1>
   </div>
-</div>
+</div> -->
 
 <div class="row">
   <div class="col-4">
-    <button class="btn btn-primary"
-      (click)="rechercherSession( saisieEtablissement.value,    saisieFormation.value, saisieSalle.value,
+    <button class="btn btn-primary" (click)="rechercherSession( saisieEtablissement.value,    saisieFormation.value, saisieSalle.value,
                                   saisieCertification.value,    saisieEntreprise.value, 
-                                  saisieDateFinSession.value,   saisieDateFinSession.value)">Filtrer par : </button>
+                                  saisieDateDebutSession.value,   saisieDateFinSession.value)">Filtrer par : </button>
+    <p><br/></p>
   </div>
 </div>
 
@@ -117,7 +125,7 @@
   </div>
   <div class="col-4">
     <input type="text" name="salle" id="salle" value="" #saisieSalle><br>
-  </div>  
+  </div>
 
 </div>
 
@@ -134,18 +142,18 @@
   </div>
   <div class="col-4">
     <input type="text" name="entreprise" id="entreprise" value="" #saisieEntreprise><br>
-  </div>  
+  </div>
 
 </div>
 
 
 <div class="row">
   <div class="col-2">
-    <label for="dateDebut">Date de début  </label>
+    <label for="dateDebut">Date de début </label>
   </div>
   <div class="col-4">
-    <input type="date" name="dateDebut" id="dateDebut" value="" #saisiedateDebutSession><br>
-  </div>  
+    <input type="date" name="dateDebut" id="dateDebut" value="" #saisieDateDebutSession><br>
+  </div>
 
   <div class="col-2">
     <label for="certification">Certification </label>
@@ -155,7 +163,7 @@
     <input type="text" name="certification" id="certification" value="" #saisieCertification><br>
   </div>
 
- </div>
+</div>
 
 <div class="row">
   <div class="col-2">
@@ -163,21 +171,107 @@
   </div>
   <div class="col-4">
     <input type="date" name="dateFin" id="dateFin" value="" #saisieDateFinSession><br>
-  </div> 
-</div> 
-
-
-<div class="row" >
-
-  <div class="col-6" *ngFor="let Session of listeSessions | async">
-    <div class="row border">
-      <p style="padding-left: 10px;padding-top: 10px;"><strong>{{ Session.nomSession }} {{ Session.nomEtablissement }}</strong></p>
-
-    </div>
-
-  
   </div>
+</div>
+
+<div class="row">
+  <p><br /></p>
+</div>
+
+
+<!-- Afficher la liste des sessions -->
+<div class="row">
+
+  <table class="table01">
+    <colgroup>
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+    </colgroup>
+
+    <tr class="bg-dgn">
+      <td>Id session</td>
+      <td>Etablissement</td>
+      <td>Libellé formation</td>
+      <td>Certif</td>
+      <td>Salle formation</td>
+      <td>Nb jrs</td>
+      <td>Nb stagiaires</td>
+      <td>Entreprise</td>
+      <td>Date début</td>
+      <td>Date fin</td>
+      <td>Total couts HT</td>
+      <td>Total CA HT</td>
+      <td>Marge brute HT</td>
+      <td>% Marge brute</td>
+      <td>Détail session</td>
+    </tr>
+
+    <tr class="divider" *ngFor="let Session of listeSessions | async">
+      <td>{{ Session.nomSession }}</td>
+      <td>{{ Session.nomCentre }}</td>
+      <td>{{ Session.nomFormation }}</td>
+      <td>{{ Session.nomCertification }}</td>
+      <td>{{ Session.nomSalleFormation }}</td>
+      <td>{{ Session.nbrJoursFormation }}</td>
+      <td>{{ Session.nbrStagiairesFormation }}</td>
+      <td>{{ Session.nomSociete }}</td>
+      <td>{{ Session.dateDebutSession }}</td>
+      <td>{{ Session.dateFinSession }}</td>
+      <td>{{ Session.totCout_HT }}</td>
+      <td>{{ Session.tot_CA_HT }}</td>
+      <td>{{ Session.margeBrute_HT }}</td>
+      <td>{{ Session.pourcMargeBrute }}</td>
+      <td><input type="button" name="button" id="button01" value="+"></td>
+    </tr>
+
+    <tr class="bg-dgn">
+      <td>
+        <p dir="ltr">TOTAL</p>
+      </td>
+      <td><br /></td>
+      <td>
+        <p dir="ltr">2</p>
+      </td>
+      <td><br /></td>
+      <td><br /></td>
+      <td>
+        <p dir="ltr">114</p>
+      </td>
+      <td>
+        <p dir="ltr">22</p>
+      </td>
+      <td><br /></td>
+      <td><br /></td>
+      <td><br /></td>
+      <td>
+        <p dir="ltr">21 000 €</p>
+      </td>
+      <td>
+        <p dir="ltr">31 000 €</p>
+      </td>
+      <td>
+        <p dir="ltr">10 000 €</p>
+      </td>
+      <td>
+        <p dir="ltr">32,26%</p>
+      </td>
+      <td><br /></td>
+    </tr>
+
+  </table>
 
 
 </div>
-
