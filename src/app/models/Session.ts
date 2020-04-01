@@ -3,6 +3,7 @@ export class Session {
   constructor(
     public nomSession?: string,
     public nomCentre?: string,
+    public nomFormation?: string,
     public nomCertification?: string,
     public nomSalleFormation?: string,
     public nbrJoursFormation?: number,
