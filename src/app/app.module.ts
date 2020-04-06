@@ -56,8 +56,6 @@ const routes: Routes = [
     Detailcoutsformateur8Component,
     Detailautrecoutssession9Component,
     MenuComponent,
-    DetailSessionComponent,
-    DetaiSessionComponent,
     DetailsessionComponent
   ],
   imports: [
