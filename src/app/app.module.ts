@@ -31,11 +31,11 @@ const routes: Routes = [
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService]}, // /tech accessible uniquement si connecté
   { path: 'auth', component: AuthComponent},
   { path: 'sessions', component: Listesessions5Component},
-  { path: 'sessions/detail/', component: DetailsessionComponent, canActivate: [StatutConnecteService] },
-  { path: 'sessions/detail/syntheseSession', component: Sessionformation1Component, canActivate: [StatutConnecteService] },
-  { path: 'sessions/detail/revenusSession', component: Detailrevenusession7Component, canActivate: [StatutConnecteService] },
-  { path: 'sessions/detail/detailCoutsFormateurs', component: Detailcoutsformateur8Component, canActivate: [StatutConnecteService] },
-  { path: 'sessions/detail/detailAutreCouts', component: Detailautrecoutssession9Component, canActivate: [StatutConnecteService] },
+  { path: 'detail', component: DetailsessionComponent, canActivate: [StatutConnecteService] },
+  { path: 'detail/syntheseSession', component: Sessionformation1Component, canActivate: [StatutConnecteService] },
+  { path: 'detail/revenusSession', component: Detailrevenusession7Component, canActivate: [StatutConnecteService] },
+  { path: 'detail/detailCoutsFormateurs', component: Detailcoutsformateur8Component, canActivate: [StatutConnecteService] },
+  { path: 'detail/detailAutreCouts', component: Detailautrecoutssession9Component, canActivate: [StatutConnecteService] },
   { path: 'menu', component: MenuComponent},
   { path: '', redirectTo: '/tech', pathMatch: 'full'}
 ];
