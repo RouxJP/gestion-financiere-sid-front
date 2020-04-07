@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'auth', component: AuthComponent},
   { path: 'sessions', component: Listesessions5Component},
   { path: 'detail', component: DetailsessionComponent, canActivate: [StatutConnecteService] },
-  { path: 'detail/syntheseSession', component: Sessionformation1Component, canActivate: [StatutConnecteService] },
+  { path: 'detail/syntheseSession', component: Synthesesessions6Component, canActivate: [StatutConnecteService] },
   { path: 'detail/revenusSession', component: Detailrevenusession7Component, canActivate: [StatutConnecteService] },
   { path: 'detail/detailCoutsFormateurs', component: Detailcoutsformateur8Component, canActivate: [StatutConnecteService] },
   { path: 'detail/detailAutreCouts', component: Detailautrecoutssession9Component, canActivate: [StatutConnecteService] },
