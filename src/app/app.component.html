@@ -2,13 +2,20 @@
 
 <!--Toolbar-->
 <div class="toolbar" role="banner">
-    <app-menu></app-menu>
+  <h1 class="h1 h1-responsive" style="text-align: center;">SID Finance</h1>
 </div>
+sdfsf
+f
+sd
+fsd
+fs
+sf
+
 
 <!--Container-->
 <div class="container" role="main">
     <div class="jumbotron">
-        <h2 class="h1 h1-responsive">SID Finance</h2>
+
         <div *ngIf="!(collegueConnecte | async).estAnonyme()">
           <span>{{(collegueConnecte | async).email}}</span>
           <span>({{(collegueConnecte | async).roles}})</span>
@@ -17,3 +24,4 @@
       </div>
      <router-outlet></router-outlet>
 </div>
+

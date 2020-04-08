@@ -4,15 +4,16 @@ import {Router} from '@angular/router';
 import {Observable} from 'rxjs/internal/Observable';
 import {Collegue} from './auth/auth.domains';
 
+
 /**
  * Composant principal de l'application.
  */
 @Component({
   selector: 'app-root',
-  templateUrl:'./app.component.html',/**!!**/
-  /* `
+ /* templateUrl: './menu.component.html',*/
+  template: `
     <div class="jumbotron">
-      <h2 class="h1 h1-responsive">SID Finance</h2>
+    <h1 class="h1 h1-responsive" style="text-align: center;">SID Finance</h1>
       <div *ngIf="!(collegueConnecte | async).estAnonyme()">
         <span>{{(collegueConnecte | async).email}}</span>
         <span>({{(collegueConnecte | async).roles}})</span>
@@ -20,8 +21,8 @@ import {Collegue} from './auth/auth.domains';
       </div>
     </div>
     <router-outlet></router-outlet>
-  `,*/
-  styleUrls: ['styles.scss'] /**!! **/
+  `,
+  styleUrls: ['styles.scss'] 
 })
 export class AppComponent implements OnInit {
 
