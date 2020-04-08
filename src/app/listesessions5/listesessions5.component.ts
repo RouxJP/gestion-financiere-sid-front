@@ -12,7 +12,9 @@ import { Session } from '../models/Session';
 
 export class Listesessions5Component implements OnInit {
   
-  listeSessions: Observable<string[]>;
+  listeSessions: Observable<Session[]>;
+   
+  nomClasse: String = "divider";
 
   constructor( private dataService: DataService) { }
 
@@ -22,6 +24,7 @@ export class Listesessions5Component implements OnInit {
     this.listeSessions = this.dataService.rechercherSession(  etablissement,    formation,    salle, 
                                                               certification,    entreprise, 
                                                               dateDebutSession, dateFinSession);
+   
 
   }
 
