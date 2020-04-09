@@ -1,1 +1,55 @@
-<p>detailsession works!</p>
+<!-- ngView: -->
+<section ng-view="" class="ng-scope">
+    <!-- Page Content -->
+    <div class="container-fluid ng-scope">
+
+        <header class="jumbotron my-4">
+            <!-- ********************************* -->
+            <!-- Affichage des différents onglets  -->
+            <!-- ********************************* -->
+            <div class="onglet">
+                <!-- Onglet 1 : Syntèse de séssion-->
+                <a ng-click="changeSelected('SYNTH-SESSION')" ng-class="{'selected':selectedTab=='SYNTH-SESSION'}"
+                    class="selected">Synthèse session</a>
+
+                <!-- Onglet 2 : Détail revenu de séssion-->
+                <a ng-click="changeSelected('DET-REV-SESSION')" ng-class="{'selected':selectedTab=='DET-REV-SESSION'}"
+                    class="">Détail revenu session</a>
+
+                <!-- Onglet 3 : Détail des couts formatteurs-->
+                <a ng-click="changeSelected('DET-COUT-FOR-SESSION')" ng-class="{'selected':selectedTab=='DET-COUT-FOR-SESSION'}"
+                    class="">Détail revenu session</a>
+
+                <!-- Onglet 4 : Détail des autres couts de session-->
+                <a ng-click="changeSelected('DET-AUT-COUT-SESSION')" ng-class="{'selected':selectedTab=='DET-AUT-COUT-SESSION'}"
+                    class="">Détail revenu session</a>
+
+
+                    
+                <!-- Onglet 1 : Syntèse de séssion-->
+                <main ng-show="selectedTab=='SYNTH-SESSION'" class="ng-scope">
+                    <!-- <app-detailsession></app-detailsession> -->
+                    <p>Synthèse session works</p>
+                </main>
+
+                <!-- Onglet 2 : Détail revenu de séssion-->
+                <main ng-show="selectedTab=='DET-REV-SESSION'" class="ng-scope ng-hide">
+                    <p>Détail revenu session works</p>
+                </main>
+
+               <!-- Onglet 3 : Détail des couts formatteurs-->
+               <main ng-show="selectedTab=='DET-COUT-FOR-SESSION'" class="ng-scope ng-hide">
+                <p>Détail revenu session works</p>
+            </main>
+
+               <!-- Onglet 4 : Détail des autres couts de session-->
+               <main ng-show="selectedTab=='DET-AUT-COUT-SESSION'" class="ng-scope ng-hide">
+                <p>Détail revenu session works</p>
+            </main>
+
+    </div>
+        </header>
+
+    </div>
+
+</section>
