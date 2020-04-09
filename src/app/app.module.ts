@@ -24,6 +24,7 @@ import { Detailautrecoutssession9Component } from './detailautrecoutssession9/de
 
 import { MenuComponent } from './menu/menu.component';
 
+
 import { DetailsessionComponent } from './detailsession/detailsession.component';
 
 
