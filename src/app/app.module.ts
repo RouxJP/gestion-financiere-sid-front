@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { TechComponent } from './tech/tech.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AuthComponent } from './auth/auth.component';
@@ -32,7 +33,7 @@ const routes: Routes = [
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService]}, // /tech accessible uniquement si connecté
   { path: 'auth', component: AuthComponent},
   { path: 'sessions', component: Listesessions5Component},
-  { path: 'sessions/detail/', component: DetailsessionComponent, canActivate: [StatutConnecteService] },
+  { path: 'sessions/detail', component: DetailsessionComponent, canActivate: [StatutConnecteService] },
   { path: 'sessions/detail/syntheseSession', component: Sessionformation1Component, canActivate: [StatutConnecteService] },
   { path: 'sessions/detail/revenusSession', component: Detailrevenusession7Component, canActivate: [StatutConnecteService] },
   { path: 'sessions/detail/detailCoutsFormateurs', component: Detailcoutsformateur8Component, canActivate: [StatutConnecteService] },
@@ -64,7 +65,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

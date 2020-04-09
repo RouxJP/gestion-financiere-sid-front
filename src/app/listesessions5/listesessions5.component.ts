@@ -14,8 +14,7 @@ export class Listesessions5Component implements OnInit {
   
   listeSessions: Observable<Session[]>;
    
-  nomClasse: String = "divider";
-
+ 
   constructor( private dataService: DataService) { }
 
   rechercherSession(  etablissement: string,  formation: string,    salle: string, 
