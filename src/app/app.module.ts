@@ -23,6 +23,7 @@ import { Detailcoutsformateur8Component } from './detailcoutsformateur8/detailco
 import { Detailautrecoutssession9Component } from './detailautrecoutssession9/detailautrecoutssession9.component';
 
 import { MenuComponent } from './menu/menu.component';
+import { MenuFinanceComponent } from './menu-finance/menu-finance.component';
 
 
 const routes: Routes = [
@@ -48,7 +49,8 @@ const routes: Routes = [
     Detailrevenusession7Component,
     Detailcoutsformateur8Component,
     Detailautrecoutssession9Component,
-    MenuComponent
+    MenuComponent,
+    MenuFinanceComponent
   ],
   imports: [
     BrowserModule,
