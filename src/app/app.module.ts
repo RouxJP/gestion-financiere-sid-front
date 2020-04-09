@@ -23,7 +23,7 @@ import { Detailrevenusession7Component } from './detailrevenusession7/detailreve
 import { Detailcoutsformateur8Component } from './detailcoutsformateur8/detailcoutsformateur8.component';
 import { Detailautrecoutssession9Component } from './detailautrecoutssession9/detailautrecoutssession9.component';
 
-import { MenuComponent } from './menu/menu.component';
+
 
 
 import { DetailsessionComponent } from './detailsession/detailsession.component';
@@ -38,7 +38,6 @@ const routes: Routes = [
   { path: 'sessions/detail/revenusSession', component: Detailrevenusession7Component, canActivate: [StatutConnecteService] },
   { path: 'sessions/detail/detailCoutsFormateurs', component: Detailcoutsformateur8Component, canActivate: [StatutConnecteService] },
   { path: 'sessions/detail/detailAutreCouts', component: Detailautrecoutssession9Component, canActivate: [StatutConnecteService] },
-  { path: 'menu', component: MenuComponent},
   { path: '', redirectTo: '/tech', pathMatch: 'full'}
 ];
 
@@ -57,7 +56,6 @@ const routes: Routes = [
     Detailrevenusession7Component,
     Detailcoutsformateur8Component,
     Detailautrecoutssession9Component,
-    MenuComponent,
     DetailsessionComponent
   ],
   imports: [
