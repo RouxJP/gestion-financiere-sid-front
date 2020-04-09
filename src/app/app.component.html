@@ -1,16 +1,99 @@
-<head>
-  <title>DIGINAMIC</title>
-</head>
+<header>
+
+  <head>
+    <title>DIGINAMIC</title>
+  </head>
 
 
-<div class="jumbotron">
-  <h2 class="h1 h1-responsive">SID Finance {{ afficherTitre()}}</h2>
 
-  <div *ngIf="!(collegueConnecte | async).estAnonyme()">
-    <span>{{(collegueConnecte | async).email}}</span>
-    <span>({{(collegueConnecte | async).roles}})</span>
-    <a class="btn btn-danger" (click)="seDeconnecter()">Se déconnecter</a>
+  <div class="jumbotron">
+
+    <div class="row">
+      <h1 class="h1 h1-responsive">SID Finance {{ afficherTitre()}}</h1>
+    </div>
+
+    <div class="row">
+      <div *ngIf="!(collegueConnecte | async).estAnonyme()">
+        <span>{{(collegueConnecte | async).email}}</span>
+        <span>({{(collegueConnecte | async).roles}})</span>
+        <a class="btn btn-danger" (click)="seDeconnecter()">Se déconnecter</a>
+      </div>
+    </div>
+
+<!-- Version 1
+    <nav ngbNav #nav="ngbNav" class="nav-tabs">
+        <ng-container ngbNavItem>
+            <a ngbNavLink>Synthèse session</a>
+            <ng-template ngbNavContent>
+                <p>Synthèse works</p>
+            </ng-template>
+        </ng-container>
+        <ng-container ngbNavItem>
+            <a ngbNavLink>Détail revenu session</a>
+            <ng-template ngbNavContent>
+                <p>Détail revenu session works</p>
+            </ng-template>
+        </ng-container>
+        <ng-container ngbNavItem>
+            <a ngbNavLink>Détail des couts formatteurs</a>
+            <ng-template ngbNavContent>
+                <p>Détail des couts formatteurs works</p>
+            </ng-template>
+        </ng-container>
+        <ng-container ngbNavItem>
+            <a ngbNavLink>Détail des autres couts de session</a>
+            <ng-template ngbNavContent>
+                <p>Détail des autres couts de session works</p>
+            </ng-template>
+        </ng-container>
+    </nav>
+
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+ 
+-->
+
+    <div class="row">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white p-0 border border-dark rounded">
+        <a class="navbar-brand p-0" href="#">
+          <!-- Logo -->
+          <img
+            src="data:image/png;base64,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"
+            width="40px" height="40px" class="" alt="Logo" class="img-fluid rounded">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item" routerLinkActive="active bg-info">
+              <!-- onglet 1 -->
+              <a class="nav-link" routerLink={{chemin[0]}} aria-selected="true" role="tab">{{headMenu[0]}}</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active bg-info">
+              <!-- Onglet 2-->
+              <a class="nav-link" routerLink={{chemin[1]}} aria-selected="false">{{headMenu[1]}}</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active bg-info">
+              <!-- Onglet 3 -->
+              <a class="nav-link" routerLink={{chemin[2]}} aria-selected="false">{{headMenu[2]}}</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active bg-info">
+              <!-- Onglet 4 -->
+              <a class="nav-link" routerLink={{chemin[3]}} aria-selected="false">{{headMenu[3]}}</a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </div>
   </div>
-</div>
+
+</header>
 
 <router-outlet></router-outlet>

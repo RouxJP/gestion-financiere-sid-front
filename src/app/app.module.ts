@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { TechComponent } from './tech/tech.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AuthComponent } from './auth/auth.component';
@@ -64,7 +65,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
