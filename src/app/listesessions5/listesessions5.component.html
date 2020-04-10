@@ -1,4 +1,4 @@
-<!--Version en dur 
+<!--Version en dur
 <p class="titre02">Liste des sessions</p>
 
   <table class="table01">
@@ -106,7 +106,7 @@
 <div class="row">
   <div class="col-4">
     <button class="btn btn-primary" (click)="rechercherSession( saisieEtablissement.value,    saisieFormation.value, saisieSalle.value,
-                                  saisieCertification.value,    saisieEntreprise.value, 
+                                  saisieCertification.value,    saisieEntreprise.value,
                                   saisieDateDebutSession.value,   saisieDateFinSession.value)">Filtrer par : </button>
     <p><br /></p>
   </div>
@@ -234,9 +234,9 @@
         <td>{{ Session.tot_CA_HT }}</td>
         <td>{{ Session.margeBrute_HT }}</td>
         <td>{{ Session.pourcMargeBrute }}</td>
-        <td><a routerLink="/sessions/detail" class="nav-link" routerLinkActive="active">+</a></td>
+        <td><a routerLink="/sessions/detail/syntheseSession" class="nav-link" routerLinkActive="active">+</a></td>
     </tr>
- 
+
     <tr class="bg-dgn">
       <td>
         <p dir="ltr">TOTAL ??</p>
