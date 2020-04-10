@@ -1,20 +1,24 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthService} from './auth/auth.service';
-import {Router} from '@angular/router';
-import {Observable} from 'rxjs/internal/Observable';
-import {Collegue} from './auth/auth.domains';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from './auth/auth.service';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/internal/Observable';
+import { Collegue } from './auth/auth.domains';
 
 /**
  * Composant principal de l'application.
  */
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html' ,
+  templateUrl: 'app.component.html',
   styles: []
 })
 export class AppComponent implements OnInit {
 
   collegueConnecte: Observable<Collegue>;
+
+  chemin: string[] = [];
+  headMenu: string[] = [];
+
 
   constructor(private _authSrv: AuthService, private _router: Router) {
 
@@ -37,12 +41,16 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     this.collegueConnecte = this._authSrv.collegueConnecteObs;
+    this.chemin = [   'sessions/detail/syntheseSession',        'sessions/detail/revenusSession',           
+                      'sessions/detail/detailCoutsFormateurs',  'sessions/detail/detailAutreCouts'];
+    this.headMenu = ['Synthèse session', 'Détail revenu de séssion', 'Détail des couts formatteurs', 'Détail des autres couts'];
+  
   }
 
   /**
    * Afficher le titre de l'ecran dans le header
    */
-  afficherTitre(){
+  afficherTitre() {
     return ' - Liste de sessions'
   }
 }

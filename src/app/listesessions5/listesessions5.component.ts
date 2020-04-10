@@ -12,8 +12,9 @@ import { Session } from '../models/Session';
 
 export class Listesessions5Component implements OnInit {
   
-  listeSessions: Observable<string[]>;
-
+  listeSessions: Observable<Session[]>;
+   
+ 
   constructor( private dataService: DataService) { }
 
   rechercherSession(  etablissement: string,  formation: string,    salle: string, 
@@ -22,6 +23,7 @@ export class Listesessions5Component implements OnInit {
     this.listeSessions = this.dataService.rechercherSession(  etablissement,    formation,    salle, 
                                                               certification,    entreprise, 
                                                               dateDebutSession, dateFinSession);
+   
 
   }
 
