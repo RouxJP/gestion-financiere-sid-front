@@ -220,7 +220,7 @@
     </tr>
 
      <tr class="{{ Session.valeurAttributClasseLigne }}"  *ngFor="let Session of listeSessions | async">
-        <td>{{ Session.nomSession }}</td>
+        <td> {{ Session.nomSession }}></td>
         <td>{{ Session.nomCentre }}</td>
         <td>{{ Session.nomFormation }}</td>
         <td>{{ Session.nomCertification }}</td>
@@ -234,7 +234,8 @@
         <td>{{ Session.tot_CA_HT }}</td>
         <td>{{ Session.margeBrute_HT }}</td>
         <td>{{ Session.pourcMargeBrute }}</td>
-        <td><a routerLink="/sessions/detail/syntheseSession" class="nav-link" routerLinkActive="active">+</a></td>
+        <td><a routerLink="/sessions/detail/syntheseSession" class="nav-link" routerLinkActive="active" (click)="memoriserSession( Session.nomSession)">+</a></td>
+
     </tr>
 
     <tr class="bg-dgn">

@@ -10,11 +10,14 @@ import { Session } from '../models/Session';
 /** Url d'acces aux services web du back */
 const urlRechercherSession = environment.baseUrl + environment.RechercherSessionUrl;
 
+
 @Injectable({
   providedIn: 'root'
 })
 
 export class DataService {
+
+  sessionSelectionnee: String;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -72,6 +75,13 @@ export class DataService {
 
     return ObsSession;
 
+  }
+
+  /** Sauver la session sélectionnée 
+   * 
+   */
+  setSessionSelectionnee( nomSession: String) {
+    this.sessionSelectionnee = nomSession;
   }
 
 
