@@ -63,22 +63,21 @@ export class AppComponent implements OnInit {
 
     } else {
       return ' ';
-
     }
-
-
   }
 
-  /** Recupérer la session sélectionnée 
+  /** 
+   * Recupérer la session sélectionnée 
    * 
    */
   getSessionSelectionnee():String{
     return this.dataService.sessionSelectionnee;
   }
 
- /** Sauver la session sélectionnée 
-   * 
-   */
+ /** 
+  * Sauver la session sélectionnée 
+  * 
+  */
   setSessionSelectionnee( nomSession : String){
     this.dataService.sessionSelectionnee = nomSession;
   }

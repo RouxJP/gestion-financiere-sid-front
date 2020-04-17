@@ -39,11 +39,12 @@ export class Listesessions5Component implements OnInit {
   }
 
   ngOnInit() {
-    this.memoriserSession( null);
+    console.log("**** init ***")
+    this.dataService.setSessionSelectionnee( null);
   }
 
    /** 
-   * Sauvegarder le nom de la session sélectionnée dans la liste de session pour consulter ses données financières
+   
    * 
    */
   memoriserSession( nomSession : String){

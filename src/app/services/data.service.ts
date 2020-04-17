@@ -17,6 +17,7 @@ const urlRechercherSession = environment.baseUrl + environment.RechercherSession
 
 export class DataService {
 
+  /** Session sélectionnée pour étudier sa gestion financière */ 
   sessionSelectionnee: String;
 
   constructor(private httpClient: HttpClient) { }

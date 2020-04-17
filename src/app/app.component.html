@@ -51,7 +51,7 @@
     <div [ngbNavOutlet]="nav" class="mt-2"></div>
     -->
 
-    <ng-container *ngIf="getSessionSelectionnee() != null">
+    <ng-container *ngIf="!(this.getSessionSelectionnee() == null)">
       <div class="row">
         <p></p>
       </div>
@@ -74,7 +74,8 @@
             <ul class="navbar-nav">
               <li class="nav-item" routerLinkActive="active bg-info">
                 <!-- onglet 1 -->
-                <a class="nav-link" routerLink={{chemin[0]}} aria-selected="false" role="tab">{{headMenu[0]}}</a>
+                <a class="nav-link" routerLink={{chemin[0]}} aria-selected="false" role="tab"  
+                   (click)="setSessionSelectionnee( null)">{{headMenu[0]}}</a>
               </li>
 
               <li class="nav-item" routerLinkActive="active bg-info">
