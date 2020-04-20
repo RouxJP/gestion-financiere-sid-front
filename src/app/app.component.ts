@@ -19,27 +19,33 @@ export class AppComponent implements OnInit {
 
 
   /** Gérer la navigation en dynamique */
-  chemin:   string[] = [];
-  headMenu: string[] = [];
+  chemin1:    string[] = [];
+  chemin2:    string[] = [];
+  headMenu1:  string[] = [];
+  headMenu2:  string[] = [];
 
 
-  constructor( private _authSrv: AuthService, private _router: Router, private dataService: DataService) {
+  constructor(private _authSrv: AuthService, private _router: Router, private dataService: DataService) {
 
   }
 
-    /**
-   * A l'initialisation, le composant s'abonne au flux du collègue courant connecté.
-   *
-   * Celui lui permet de rester à jour en fonction des connexions et déconnexions.
-   */
+  /**
+ * A l'initialisation, le composant s'abonne au flux du collègue courant connecté.
+ *
+ * Celui lui permet de rester à jour en fonction des connexions et déconnexions.
+ */
   ngOnInit(): void {
 
-    this.collegueConnecte                 = this._authSrv.collegueConnecteObs;
-    this.dataService.sessionSelectionnee  = null;
-    this.chemin   = [ 'sessions',                               'sessions/detail/syntheseSession',    'sessions/detail/revenusSession',
-                      'sessions/detail/detailCoutsFormateurs',  'sessions/detail/detailAutreCouts'];
-    this.headMenu = [ 'Liste des sessions',                    'Synthèse session',                     'Détail revenu de séssion', 
-                      'Détail des couts formatteurs',           'Détail des autres couts'];
+    this.collegueConnecte = this._authSrv.collegueConnecteObs;
+    this.dataService.sessionSelectionnee = null;
+
+    this.chemin1       = [ 'sessions/detail/syntheseSession', 'sessions'];
+    this.headMenu1      = [ 'Synthèse des sessions', 'Recherche sessions'];
+ 
+    this.chemin2       = [  'sessions', 'sessions/detail/syntheseSession', 'sessions/detail/revenusSession',
+                            'sessions/detail/detailCoutsFormateurs', 'sessions/detail/detailAutreCouts'];
+    this.headMenu2      = [ 'Liste des sessions', 'Synthèse session', 'Détail revenu de séssion',
+                          'Détail des couts formatteurs', 'Détail des autres couts'];
 
   }
 
@@ -47,7 +53,7 @@ export class AppComponent implements OnInit {
    * Action déconnecter collègue.
    */
   seDeconnecter() {
-    this.setSessionSelectionnee( null);
+    this.setSessionSelectionnee(null);
     this._authSrv.seDeconnecter().subscribe(
       value => this._router.navigate(['/auth'])
     );
@@ -58,8 +64,8 @@ export class AppComponent implements OnInit {
    * Afficher le titre de l'ecran dans le header
    */
   completerTitre() {
-    if( this.getSessionSelectionnee() != null) {
-      return 'séssion en cours : ' +  this.getSessionSelectionnee() ;
+    if (this.getSessionSelectionnee() != null) {
+      return 'séssion en cours : ' + this.getSessionSelectionnee();
 
     } else {
       return ' ';
@@ -70,15 +76,15 @@ export class AppComponent implements OnInit {
    * Recupérer la session sélectionnée 
    * 
    */
-  getSessionSelectionnee():String{
+  getSessionSelectionnee(): String {
     return this.dataService.sessionSelectionnee;
   }
 
- /** 
-  * Sauver la session sélectionnée 
-  * 
-  */
-  setSessionSelectionnee( nomSession : String){
+  /** 
+   * Sauver la session sélectionnée 
+   * 
+   */
+  setSessionSelectionnee(nomSession: String) {
     this.dataService.sessionSelectionnee = nomSession;
   }
 

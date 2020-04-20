@@ -204,14 +204,14 @@
     <tr class="bg-dgn">
       <td>Id session</td>
       <td>Etablissement</td>
-      <td>Libellé formation</td>
+      <td>Formation</td>
       <td>Certif</td>
-      <td>Salle formation</td>
+      <td>Salle</td>
       <td>Nb jrs</td>
-      <td>Nb stagiaires</td>
+      <td>Nb sta</td>
       <td>Entreprise</td>
-      <td>Date début</td>
-      <td>Date fin</td>
+      <td>Date de deb formation</td>
+      <td>Date de fin formation</td>
       <td>Total couts HT</td>
       <td>Total CA HT</td>
       <td>Marge brute HT</td>
@@ -220,7 +220,7 @@
     </tr>
 
      <tr class="{{ Session.valeurAttributClasseLigne }}"  *ngFor="let Session of listeSessions | async">
-        <td> {{ Session.nomSession }}></td>
+        <td>{{ Session.nomSession }}></td>
         <td>{{ Session.nomCentre }}</td>
         <td>{{ Session.nomFormation }}</td>
         <td>{{ Session.nomCertification }}</td>
@@ -234,7 +234,7 @@
         <td>{{ Session.tot_CA_HT }}</td>
         <td>{{ Session.margeBrute_HT }}</td>
         <td>{{ Session.pourcMargeBrute }}</td>
-        <td><a routerLink="/sessions/detail/syntheseSession" class="nav-link" routerLinkActive="active" 
+        <td><a routerLink="/sessions/detail/revenusSession" class="nav-link" routerLinkActive="active" 
                (click)="memoriserSession( Session.nomSession)">+</a></td>
 
     </tr>
