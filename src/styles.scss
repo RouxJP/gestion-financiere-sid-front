@@ -290,7 +290,7 @@ background-color: #bfbfff;
 		overflow-y: scroll;
 		max-height: 250px;
 	}
-	datalist {
+	.datalist {
 		font-size: 0.5rem;
 	}
 	.form-control {
@@ -1406,7 +1406,6 @@ legend.scheduler-border {
 .divider {
 	height: 1px;
 	background-color: #e5e5e5;
-	text-align: center;
 }
 .modulename {
 	background-color: #ff9900;
