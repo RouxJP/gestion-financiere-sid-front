@@ -85,6 +85,18 @@ export class DataService {
     this.sessionSelectionnee = nomSession;
   }
 
+  /**
+   * Completer le titre de l'ecran avec la session en cours selectionnée
+   */
+  completerTitre() {
+    if (this.sessionSelectionnee != null) {
+      return ' : ' + this.sessionSelectionnee;
 
+    } else {
+      return ' ';
+    }
+  }
+
+  
 }
 

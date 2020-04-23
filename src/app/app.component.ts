@@ -42,10 +42,10 @@ export class AppComponent implements OnInit {
     this.chemin1       = [ 'sessions/detail/syntheseSession', 'sessions'];
     this.headMenu1      = [ 'Synthèse des sessions', 'Recherche sessions'];
  
-    this.chemin2       = [  'sessions', 'sessions/detail/syntheseSession', 'sessions/detail/revenusSession',
-                            'sessions/detail/detailCoutsFormateurs', 'sessions/detail/detailAutreCouts'];
-    this.headMenu2      = [ 'Liste des sessions', 'Synthèse session', 'Détail revenu de séssion',
-                          'Détail des couts formatteurs', 'Détail des autres couts'];
+    this.chemin2       = [  'sessions',                               'sessions/detail/revenusSession',
+                            'sessions/detail/detailCoutsFormateurs',  'sessions/detail/detailAutreCouts'];
+    this.headMenu2      = [ 'Liste des sessions',                     'Détail revenu de séssion',
+                            'Détail des couts formatteurs',           'Détail des autres couts'];
 
   }
 
@@ -53,40 +53,12 @@ export class AppComponent implements OnInit {
    * Action déconnecter collègue.
    */
   seDeconnecter() {
-    this.setSessionSelectionnee(null);
+    this.dataService.setSessionSelectionnee(null);
     this._authSrv.seDeconnecter().subscribe(
       value => this._router.navigate(['/auth'])
     );
   }
 
 
-  /**
-   * Afficher le titre de l'ecran dans le header
-   */
-  completerTitre() {
-    if (this.getSessionSelectionnee() != null) {
-      return 'séssion en cours : ' + this.getSessionSelectionnee();
-
-    } else {
-      return ' ';
-    }
-  }
-
-  /** 
-   * Recupérer la session sélectionnée 
-   * 
-   */
-  getSessionSelectionnee(): String {
-    return this.dataService.sessionSelectionnee;
-  }
-
-  /** 
-   * Sauver la session sélectionnée 
-   * 
-   */
-  setSessionSelectionnee(nomSession: String) {
-    this.dataService.sessionSelectionnee = nomSession;
-  }
-
-
+ 
 }
