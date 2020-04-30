@@ -210,67 +210,33 @@
       <td>Nb jrs</td>
       <td>Nb sta</td>
       <td>Entreprise</td>
-      <td>Date de deb formation</td>
-      <td>Date de fin formation</td>
-      <td>Total couts HT</td>
-      <td>Total CA HT</td>
-      <td>Marge brute HT</td>
-      <td>% Marge brute</td>
-      <td>Détail session</td>
+      <td align="middle">Date deb formation</td>
+      <td align="middle">Date fin formation</td>
+      <td align="middle">Total couts HT</td>
+      <td align="middle">Total CA HT</td>
+      <td align="middle">Marge brute HT</td>
+      <td align="middle">% Marge brute</td>
+      <td align="middle">Détail</td>
     </tr>
 
      <tr class="{{ Session.valeurAttributClasseLigne }}"  *ngFor="let Session of listeSessions | async">
-        <td>{{ Session.nomSession }}></td>
-        <td>{{ Session.nomCentre }}</td>
-        <td>{{ Session.nomFormation }}</td>
-        <td>{{ Session.nomCertification }}</td>
-        <td>{{ Session.nomSalleFormation }}</td>
-        <td>{{ Session.nbrJoursFormation }}</td>
-        <td>{{ Session.nbrStagiairesFormation }}</td>
-        <td>{{ Session.nomSociete }}</td>
-        <td>{{ Session.dateDebutSession }}</td>
-        <td>{{ Session.dateFinSession }}</td>
-        <td>{{ Session.totCout_HT }}</td>
-        <td>{{ Session.tot_CA_HT }}</td>
-        <td>{{ Session.margeBrute_HT }}</td>
-        <td>{{ Session.pourcMargeBrute }}</td>
-        <td><a routerLink="/sessions/detail/revenusSession" class="nav-link" routerLinkActive="active" 
+        <td><p dir="{{ Session.valeurAttributTd }}">{{ Session.nomSession }}</p></td>
+        <td><p dir="{{ Session.valeurAttributTd }}">{{ Session.nomCentre }}</p></td>
+        <td><p dir="{{ Session.valeurAttributTd }}">{{ Session.nomFormation }}</p></td>
+        <td><p dir="{{ Session.valeurAttributTd }}">{{ Session.nomCertification }}</p></td>
+        <td><p dir="{{ Session.valeurAttributTd }}">{{ Session.nomSalleFormation }}</p></td>
+        <td align="middle"><p dir="{{ Session.valeurAttributTd }}">{{ Session.nbrJoursFormation }}</p></td>
+        <td align="middle"><p dir="{{ Session.valeurAttributTd }}">{{ Session.nbrStagiairesFormation }}</p></td>
+        <td><p dir="{{ Session.valeurAttributTd }}">{{ Session.nomSociete }}</p></td>
+        <td align="middle"><p dir="{{ Session.valeurAttributTd }}">{{ Session.dateDebutSession }}</p></td>
+        <td align="middle"><p dir="{{ Session.valeurAttributTd }}">{{ Session.dateFinSession }}</p></td>
+        <td align="right"><p dir="{{ Session.valeurAttributTd }}">{{ Session.libTotCout_HT }}</p></td>
+        <td align="right"><p dir="{{ Session.valeurAttributTd }}">{{ Session.libTot_CA_HT }}</p></td>
+        <td align="right"><p dir="{{ Session.valeurAttributTd }}">{{ Session.libMargeBrute_HT }}</p></td>
+        <td align="middle"><p dir="{{ Session.valeurAttributTd }}">{{ Session.pourcMargeBrute }} %</p></td>
+        <td align="middle"><a routerLink="/sessions/detail/revenusSession" class="nav-link" routerLinkActive="active" 
                (click)="memoriserSession( Session.nomSession)">+</a></td>
 
-    </tr>
-
-    <tr class="bg-dgn">
-      <td>
-        <p dir="ltr">TOTAL ??</p>
-      </td>
-      <td><br /></td>
-      <td>
-        <p dir="ltr">?</p>
-      </td>
-      <td><br /></td>
-      <td><br /></td>
-      <td>
-        <p dir="ltr">???</p>
-      </td>
-      <td>
-        <p dir="ltr">??</p>
-      </td>
-      <td><br /></td>
-      <td><br /></td>
-      <td><br /></td>
-      <td>
-        <p dir="ltr">??? €</p>
-      </td>
-      <td>
-        <p dir="ltr">??? €</p>
-      </td>
-      <td>
-        <p dir="ltr">??? €</p>
-      </td>
-      <td>
-        <p dir="ltr">?? %</p>
-      </td>
-      <td><br /></td>
     </tr>
 
   </table>
